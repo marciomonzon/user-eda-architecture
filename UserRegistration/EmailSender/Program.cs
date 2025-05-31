@@ -1,6 +1,14 @@
 using EmailSender;
+using EmailSender.Data;
+using Microsoft.EntityFrameworkCore;
 
 var builder = Host.CreateApplicationBuilder(args);
+
+var conn = builder.Configuration["ConnectionStrings:DefaultConnection"];
+
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlServer(conn));
+
 builder.Services.AddHostedService<Worker>();
 
 var host = builder.Build();

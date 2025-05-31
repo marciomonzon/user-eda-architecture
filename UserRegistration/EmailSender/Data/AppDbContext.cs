@@ -1,7 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Notification.Models;
+﻿using EmailSender.Models;
+using Microsoft.EntityFrameworkCore;
 
-namespace Notification.Data
+namespace EmailSender.Data
 {
     public class AppDbContext : DbContext
     {
